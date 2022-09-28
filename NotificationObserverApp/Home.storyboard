@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dWr-ZH-Diy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="P8V-nz-wds">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="qDy-oC-AaF" customClass="HomeVC" customModule="NotificationObserverApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tLy-yK-lNd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mO3-6d-E2P" userLabel="tableUsers">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="qDy-oC-AaF" id="dme-Pu-ewf"/>
+                                    <outlet property="delegate" destination="qDy-oC-AaF" id="BZ8-O9-QSa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kux-gR-fUt"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="mO3-6d-E2P" firstAttribute="top" secondItem="kux-gR-fUt" secondAttribute="top" id="Em9-MX-WhM"/>
+                            <constraint firstItem="mO3-6d-E2P" firstAttribute="leading" secondItem="kux-gR-fUt" secondAttribute="leading" id="ZVc-ws-TWV"/>
+                            <constraint firstItem="kux-gR-fUt" firstAttribute="trailing" secondItem="mO3-6d-E2P" secondAttribute="trailing" id="ZaG-wU-EqK"/>
+                            <constraint firstItem="kux-gR-fUt" firstAttribute="bottom" secondItem="mO3-6d-E2P" secondAttribute="bottom" id="cMN-lw-Vg7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="3ko-zg-k5J">
+                        <barButtonItem key="rightBarButtonItem" image="star.fill" catalog="system" id="NmO-ls-piN">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="favoriteBtnAction:" destination="qDy-oC-AaF" id="qNT-MN-cgt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="usersTable" destination="mO3-6d-E2P" id="NE1-Pv-i9g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UH4-tD-XRc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="678.26086956521749" y="-455.35714285714283"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Rq-IV-AQm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dWr-ZH-Diy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MAQ-Pb-00m">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qDy-oC-AaF" kind="relationship" relationship="rootViewController" id="zDC-em-M9S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="glX-Rb-7D7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-231.8840579710145" y="-455.35714285714283"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

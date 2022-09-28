@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableCell" rowHeight="129" id="KGk-i7-Jjw" customClass="UserTableCell" customModule="NotificationObserverApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="427" height="129"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="427" height="129"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSJ-Io-Fg2" userLabel="labelName">
+                        <rect key="frame" x="16" y="32" width="314.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phQ-bt-uYL" userLabel="labelEmail">
+                        <rect key="frame" x="16" y="84.5" width="395" height="12.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvJ-GD-f3w">
+                        <rect key="frame" x="346.5" y="10" width="64.5" height="64.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="dvJ-GD-f3w" secondAttribute="height" multiplier="1:1" id="utL-iG-kmN"/>
+                        </constraints>
+                        <color key="tintColor" systemColor="systemRedColor"/>
+                        <state key="normal" image="star" catalog="system"/>
+                        <connections>
+                            <action selector="favoriteBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RGS-Il-Laj"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dvJ-GD-f3w" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="9UI-BD-zVt"/>
+                    <constraint firstItem="eSJ-Io-Fg2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="C65-ru-jp6"/>
+                    <constraint firstItem="phQ-bt-uYL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="JjT-p6-yUY"/>
+                    <constraint firstItem="dvJ-GD-f3w" firstAttribute="leading" secondItem="eSJ-Io-Fg2" secondAttribute="trailing" constant="16" id="LRf-be-eHS"/>
+                    <constraint firstAttribute="trailing" secondItem="phQ-bt-uYL" secondAttribute="trailing" constant="16" id="Sye-D4-KHD"/>
+                    <constraint firstItem="phQ-bt-uYL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dvJ-GD-f3w" secondAttribute="bottom" constant="10" id="YUJ-RQ-XBZ"/>
+                    <constraint firstAttribute="bottom" secondItem="phQ-bt-uYL" secondAttribute="bottom" constant="32" id="hXn-WZ-rTh"/>
+                    <constraint firstItem="phQ-bt-uYL" firstAttribute="top" secondItem="eSJ-Io-Fg2" secondAttribute="bottom" constant="32" id="lGS-ps-xIj"/>
+                    <constraint firstItem="eSJ-Io-Fg2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="32" id="uXR-rC-RYm"/>
+                    <constraint firstAttribute="trailing" secondItem="dvJ-GD-f3w" secondAttribute="trailing" constant="16" id="vAk-Sv-pQz"/>
+                    <constraint firstItem="dvJ-GD-f3w" firstAttribute="centerY" secondItem="eSJ-Io-Fg2" secondAttribute="centerY" id="xfT-og-fc1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnFavorite" destination="dvJ-GD-f3w" id="3Zh-mK-B7B"/>
+                <outlet property="lblEmail" destination="phQ-bt-uYL" id="Dg9-fN-qsC"/>
+                <outlet property="lblName" destination="eSJ-Io-Fg2" id="BS1-lu-Soo"/>
+            </connections>
+            <point key="canvasLocation" x="218.11594202898553" y="112.16517857142857"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
