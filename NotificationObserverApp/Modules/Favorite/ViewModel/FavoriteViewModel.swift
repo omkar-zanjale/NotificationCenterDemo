@@ -16,7 +16,7 @@ class FavoriteViewModel {
     }
     
     private func createObserver() {
-        let favoriteNotificationName = NSNotification.Name(favoriteUsersKey)
+        let favoriteNotificationName = NSNotification.Name(favoriteUsersNotifyKey)
         NotificationCenter.default.addObserver(self, selector: #selector(notifyFavoriteUser(notification:)), name: favoriteNotificationName, object: nil)
     }
     

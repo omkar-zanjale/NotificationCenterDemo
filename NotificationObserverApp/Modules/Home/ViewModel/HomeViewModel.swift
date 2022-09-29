@@ -14,7 +14,7 @@ class HomeViewModel {
     func getUsers() {
         NetworkManager.getAPI(url: "https://jsonplaceholder.typicode.com/users", resultType: [User].self) { [weak self] result in
             self?.users = result
-            let notificationName = NSNotification.Name(apiNotificationKey)
+            let notificationName = NSNotification.Name(apiCompleteNotifyKey)
             NotificationCenter.default.post(name: notificationName, object: nil)
         }
     }
