@@ -8,6 +8,3 @@
 import Foundation
 
 
-protocol FavoriteTableCellDelegate: AnyObject {
-    func didUpdatefavoriteStatus(forUser userId: Int, status: Bool)
-}

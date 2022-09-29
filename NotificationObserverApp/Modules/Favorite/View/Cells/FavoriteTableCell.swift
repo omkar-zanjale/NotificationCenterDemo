@@ -12,9 +12,6 @@ class FavoriteTableCell: UITableViewCell {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var lblPhone: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
     
     var user: User? {
         didSet {
@@ -24,5 +21,17 @@ class FavoriteTableCell: UITableViewCell {
             self.lblPhone.text = "Phone : " + (user.phone ?? "")
         }
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
 
+    @IBAction func removeFavoriteBtnAction(_ sender: Any) {
+        let favoriteUpdateNotificationName = NSNotification.Name(updateFavoriteUserNotifyKey)
+        let userInfo: [String: Any] = [
+            "userId": user?.id as Any,
+            "favoriteStatus": false
+        ]
+        NotificationCenter.default.post(name: favoriteUpdateNotificationName, object: nil, userInfo: userInfo)
+    }
 }

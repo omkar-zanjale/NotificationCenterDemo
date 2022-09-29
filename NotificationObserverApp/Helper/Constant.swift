@@ -12,8 +12,9 @@ let userTableCellIdentifier = "UserTableCell"
 let favoriteTableCellIdentifier = "FavoriteTableCell"
 
 //MARK: - Notification Center keys
-let apiNotificationKey = "APICalled"
-let favoriteUsersKey = "FavoriteUsers"
+let apiCompleteNotifyKey = "APICompleted"
+let favoriteUsersNotifyKey = "FavoriteUsers"
+let updateFavoriteUserNotifyKey = "UpdateFavoriteUser"
 
 //MARK: - Storyboard Identifiers
 let favoriteStoryboard = "Favorite"

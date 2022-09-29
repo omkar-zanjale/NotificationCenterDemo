@@ -15,7 +15,6 @@ class UserTableCell: UITableViewCell {
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var btnFavorite: UIButton!
     private var isFavorite: Bool?
-    weak var delegate: FavoriteTableCellDelegate?
     var user: User? {
         didSet {
             guard let user = user else { return }
@@ -39,6 +38,12 @@ class UserTableCell: UITableViewCell {
 
     @IBAction func favoriteBtnAction(_ sender: Any) {
         let favoriteStatus = !(isFavorite ?? false)
-        delegate?.didUpdatefavoriteStatus(forUser: (user?.id ?? 0), status: favoriteStatus)
+        let userInfo: [String: Any] = [
+            "userId": user?.id as Any,
+            "favoriteStatus": favoriteStatus
+        ]
+        
+        let favoriteUpdateNotifiactionName = Notification.Name(updateFavoriteUserNotifyKey)
+        NotificationCenter.default.post(name: favoriteUpdateNotifiactionName, object: nil, userInfo: userInfo)
     }
 }
